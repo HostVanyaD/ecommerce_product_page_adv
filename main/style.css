@@ -84,7 +84,7 @@ body p {
     cursor: pointer;
     padding: 20px;
     grid-area: hamb;
-    z-index: 2;
+    z-index: 11;
 }
 
 .hamb-line {
@@ -106,7 +106,7 @@ body p {
     max-height: 100%;
     max-width: 70%;
     top: 0;
-    z-index: 1;
+    z-index: 10;
 }
 
 .side-menu:checked~.hamb .hamb-line:nth-child(2) {
@@ -308,11 +308,38 @@ hr {
     display: none;
 }
 
+.slider-btn {
+    position: absolute;
+    top: 22%;
+    z-index: 5;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: var(--white);
+    color: var(--black);
+    cursor: pointer;
+}
+
+.slide-btn-left {
+    left: 4%
+}
+
+.slide-btn-right {
+    right: 4%;
+}
+
+.slide-btn-left img,
+.slide-btn-right img {
+    height: 12px;
+}
+
 .side {
     padding: 0 20px;
 }
 
 .side h3 {
+    margin-top: 25px;
     margin-bottom: -8px;
     text-transform: uppercase;
     color: var(--orange);
