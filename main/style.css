@@ -42,6 +42,250 @@ body p {
     font-size: 16px;
 }
 
+.header {
+    background-color: var(--white);
+    top: 0;
+    width: 100%;
+    height: 68px;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 1fr;
+    grid-template-areas: 'hamb logo cart-icon avatar';
+    justify-items: start;
+    align-items: center;
+}
+
+/* Nav menu */
+.nav {
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--white);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+.nav-menu {
+    margin: 50px 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 16px 20px;
+    color: var(--black);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+/* Menu Icon */
+.hamb {
+    cursor: pointer;
+    padding: 20px;
+    grid-area: hamb;
+    z-index: 2;
+}
+
+.hamb-line {
+    background: var(--darkGrayishBlue);
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 16px;
+    margin: 2.5px auto;
+}
+
+/* Hide checkbox */
+.side-menu {
+    display: none;
+}
+
+/* Toggle menu icon */
+.side-menu:checked~nav {
+    max-height: 100%;
+    max-width: 70%;
+    top: 0;
+    z-index: 1;
+}
+
+.side-menu:checked~.hamb .hamb-line:nth-child(2) {
+    opacity: 0;
+}
+
+.side-menu:checked~.hamb .hamb-line:nth-child(1) {
+    width: 20px;
+    transform: translateY(3px) rotate(45deg);
+}
+
+.side-menu:checked~.hamb .hamb-line:nth-child(3) {
+    width: 20px;
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* .overlay {
+    height: 100vh;
+}
+
+.side-menu:checked~#overlay {
+    opacity: 0.5;
+    background-color: Black;
+} */
+
+.cart-toggle {
+    display: none;
+}
+
+.items-count {
+    display: none;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 19px;
+    height: 13px;
+    position: absolute;
+    right: 52px;
+    top: 16px;
+    text-align: center;
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cart-container {
+    width: 360px;
+    height: 256px;
+    background-color: var(--white);
+    border-radius: 12px;
+    top: 76px;
+    right: 8px;
+    flex-direction: column;
+}
+
+.cart-toggle:checked~.cart-container {
+    display: flex;
+    position: absolute;
+}
+
+.cart-container h3 {
+    font-size: 16px;
+    padding: 2px 20px;
+}
+
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: var(--grayishBlue);
+    height: 1px;
+}
+
+.empty-cart {
+    text-align: center;
+    font-weight: bold;
+    color: grey;
+    padding-top: 15%;
+}
+
+.full-cart {
+    padding-top: 11px;
+}
+
+.item-description {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.item-description .title {
+    grid-area: title;
+    margin: 0;
+    font-weight: lighter;
+    color: var(--darkGrayishBlue);
+}
+
+.description {
+    display: grid;
+    grid-template: 1fr 1fr / 5fr 1fr;
+    grid-template-areas: 'title bin''price bin';
+}
+
+.price-wrapper {
+    grid-area: price;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.price-wrapper span {
+    margin: 0;
+    color: var(--darkGrayishBlue);
+}
+
+.total-price {
+    color: var(--black);
+    margin-left: 7px;
+}
+
+.remove-btn-container {
+    grid-area: bin;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.remove-btn-container button {
+    background: transparent;
+    outline: none;
+    border: none;
+    padding-left: 7px;
+}
+
+.checkout-btn-container {
+    text-align: center;
+}
+
+.checkout-btn-container button {
+    width: 330px;
+    height: 56px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    margin: 30px auto;
+}
+
+.cart-icon-wrapper {
+    grid-area: cart-icon;
+}
+
+.profile-picture {
+    width: 24px;
+    grid-area: avatar;
+}
+
+.profile-picture img {
+    width: 100%;
+}
+
+.cart-container {
+    display: none;
+}
+
 .page {
     width: 100%;
     margin-bottom: 4em;
