@@ -479,19 +479,20 @@ button:hover {
         display: flex;
         justify-content: space-between;
         height: 40px;
+        margin-bottom: 20px;
     }
 
     .nav {
         display: block;
-        height: 26px;
+        height: max-content;
         max-height: fit-content;
-        position: inherit;
+        position: sticky;
     }
 
     .nav-menu {
         display: flex;
         flex-direction: row;
-        gap: 30px;
+        gap: 45px;
         margin: 0;
     }
 
@@ -502,14 +503,43 @@ button:hover {
         padding: 0;
     }
 
+    .nav-menu li {
+        position: relative;
+        padding: 50px 0;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+    }
+
+    .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        top: 109px;
+        background-color: var(--orange);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .nav-link:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
     .profile-picture {
         width: 50px;
+        padding-right: 40px;
     }
 
     .cart-container {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        top: 9%;
-        left: 72%;
+        top: 10%;
+        left: 71%;
     }
 
     .break-line {
@@ -517,10 +547,15 @@ button:hover {
         top: 100px;
         position: absolute;
         z-index: 0;
+        margin: 0;
+        background-color: var(--grayishBlue);
+        border: none;
+
     }
 
     .page {
         flex-direction: row;
+        justify-content: space-around;
         width: 91%;
         height: 565px;
         align-items: center;
