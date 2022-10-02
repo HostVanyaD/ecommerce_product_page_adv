@@ -123,14 +123,17 @@ body p {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* .overlay {
-    height: 100vh;
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    transition: all 0.5s;
 }
-
-.side-menu:checked~#overlay {
-    opacity: 0.5;
-    background-color: Black;
-} */
 
 .cart-toggle {
     display: none;
@@ -145,9 +148,9 @@ body p {
     border-radius: 8px;
     width: 19px;
     height: 13px;
-    position: absolute;
-    right: 52px;
-    top: 16px;
+    position: relative;
+    right: -10px;
+    top: 9px;
     text-align: center;
 }
 
@@ -199,6 +202,7 @@ hr {
 }
 
 .full-cart {
+    display: none;
     padding-top: 11px;
 }
 
@@ -536,6 +540,16 @@ button:hover {
         padding-right: 40px;
     }
 
+    .profile-picture img:hover {
+        border: 3px solid var(--orange);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .cart-icon-wrapper:hover {
+        cursor: pointer;
+    }
+
     .cart-container {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         top: 10%;
@@ -572,7 +586,7 @@ button:hover {
     }
 
     .main-picture {
-        margin-bottom: 23px;
+        margin-bottom: 14px;
     }
 
     #expandedImg {
@@ -581,12 +595,27 @@ button:hover {
 
     .thumbnails-row {
         display: flex;
-        gap: 31px;
+        gap: 28px;
     }
 
     .thumbnails-col {
         height: 88px;
         width: 88px;
+    }
+
+    .thumbnails-col img {
+        width: 100%;
+    }
+
+    .main {
+        border: 3px solid var(--orange);
+        border-radius: 13px;
+        opacity: 0.5;
+    }
+
+    .thumbnails-col:hover {
+        cursor: pointer;
+        opacity: 0.5;
     }
 
     .thumbnails-col img {
@@ -650,6 +679,11 @@ button:hover {
 
     .add-btn-container {
         width: 272px;
+    }
+
+    .add-btn-container:hover,
+    .counter-btn:hover {
+        opacity: 0.7;
     }
 
     .add-btn-container button {

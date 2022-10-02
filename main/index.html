@@ -48,7 +48,7 @@
     <div class="cart-container">
       <h3>Cart</h3>
       <hr>
-      <div class="empty-cart" style="display: none">
+      <div class="empty-cart">
         <p>Your cart is empty.</p>
       </div>
       <div class="full-cart">
@@ -60,19 +60,19 @@
             <h5 class="title">Fall Limited Edition Sneakers</h5>
             <div class="price-wrapper">
               <span class="price">
-                <span class="reg-price">$125.00</span> x <span class="quantity">3</span>
-                <strong class="total-price">$375.00</strong>
+                <span class="reg-price">$125.00</span> x <span class="quantity"></span>
+                <strong class="total-price"></strong>
               </span>
             </div>
             <div class="remove-btn-container">
-              <button>
+              <button class="remove-btn">
                 <img src="./images/icon-delete.svg" alt="">
               </button>
             </div>
           </div>
         </section>
         <div class="checkout-btn-container">
-          <button>Checkout</button>
+          <button class="checkout-btn">Checkout</button>
         </div>
       </div>
     </div>
@@ -89,7 +89,7 @@
         <img id="expandedImg" src="./images/image-product-1.jpg" alt="product-1">
       </div>
       <div class="thumbnails-row">
-        <div class="thumbnails-col">
+        <div class="thumbnails-col main">
           <img src="./images/image-product-1-thumbnail.jpg" alt="">
         </div>
         <div class="thumbnails-col">
@@ -128,7 +128,7 @@
           <button class="counter-btn increase">+</button>
         </div>
         <div class="add-btn-container">
-          <button>
+          <button class="add-btn">
             <img src="./images/icon-cart.svg" alt="">
             Add to cart
           </button>
@@ -141,6 +141,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="./app.js"></script>
 </body>
 
 </html>
